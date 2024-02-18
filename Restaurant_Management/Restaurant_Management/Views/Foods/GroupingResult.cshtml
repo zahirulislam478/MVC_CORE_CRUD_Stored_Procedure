@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GroupedData>
+
+
+
+<div class="container" style="margin-bottom:400px;">
+    <h3>Result</h3>
+    @foreach (var x in Model)
+    {
+        <div class="result-item">
+            <h4>@x.Key</h4>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th></th>
+                        <th>CustomerName</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>OrderDate</th>
+                        <th>Quantity</th>
+                        <th>TotalAmount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var q in x.Data)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>@q.CustomerName</td>
+                            <td>@q.Phone</td>
+                            <td>@q.Email</td>
+                            <td>@q.Address</td>
+                            <td>@q.OrderDate?.ToString("yyyy-MM-dd")</td>
+                            <td>@q.Quantity</td>
+                            <td>@q.TotalAmount</td>
+                           
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    <a asp-action="Index" asp-controller="Foods" class="btn btn-secondary"><i class="bi bi-arrow-return-left"> Back to index</i></a>
+</div>
+
+

@@ -1,0 +1,83 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Restaurant_Management
+build_property.RootNamespace = Restaurant_Management
+build_property.ProjectDir = C:\Users\Zahirul Islam\Desktop\C#.NET\VIVA\MVC Core\Restaurant_Management\Restaurant_Management\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Zahirul Islam\Desktop\C#.NET\VIVA\MVC Core\Restaurant_Management\Restaurant_Management
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/BookTables/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1RhYmxlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/Aggregates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcQWdncmVnYXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/Grouping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcR3JvdXBpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/GroupingResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcR3JvdXBpbmdSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/GroupingResultPrimitive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcR3JvdXBpbmdSZXN1bHRQcmltaXRpdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Foods/_GetOrdersForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZHNcX0dldE9yZGVyc0Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Menu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/VIVA/MVC Core/Restaurant_Management/Restaurant_Management/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = X1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

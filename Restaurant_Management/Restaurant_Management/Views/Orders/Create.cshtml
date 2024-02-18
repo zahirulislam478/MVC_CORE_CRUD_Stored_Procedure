@@ -1,0 +1,83 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row" style="margin-bottom:400px;">
+    <div class="col-12">
+        <form asp-action="Create" asp-controller="Orders" method="post">
+            <h3>Add new order</h3>
+            <input type="hidden" asp-for="FoodId" value="@ViewBag.FoodId" />
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="CustomerName"></label>
+                <div class="col-6">
+                    <input asp-for="CustomerName" class="form-control" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="Phone"></label>
+                <div class="col-6">
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="Email"></label>
+                <div class="col-6">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="Address"></label>
+                <div class="col-6">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="OrderDate"></label>
+                <div class="col-6">
+                    <input type="date" asp-for="OrderDate" class="form-control" />
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="Quantity"></label>
+                <div class="col-6">
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2" asp-for="TotalAmount"></label>
+                <div class="col-6">
+                    <input asp-for="TotalAmount" class="form-control" />
+                    <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                </div>
+            </div>           
+
+            <div class="form-group row mb-2">
+                <div class="col-6 offset-2">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-save"> Save</i></button>
+                    <a asp-action="Index" asp-controller="Foods" class="btn btn-secondary"><i class="bi bi-arrow-return-left"> Back to index</i></a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts
+    {   
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/jquery-validate/jquery.validate.js"></script>
+    <script src="~/libs/jquery-validate/jquery.validate.unobtrusive.js"></script>
+}

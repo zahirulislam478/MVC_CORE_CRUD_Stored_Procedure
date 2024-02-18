@@ -1,0 +1,193 @@
+﻿@model FoodInputModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row" style="margin-left:150px; margin-bottom:400px;">
+    <div class="col-12">
+        <h3 style="margin-top:50px;">Add New Food</h3>
+        <form id="frm" method="post" asp-action="Create" asp-controller="Foods">
+
+            <div class="form-group row mb-1">
+                <label asp-for="FoodName" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="FoodName" class="form-control" />
+                    <span asp-validation-for="FoodName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Category" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <select asp-for="Category" class="form-select" asp-items="@Html.GetEnumSelectList<FoodCategory>()">
+                        <option value="" selected>Select one</option>
+                    </select>
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Description" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Price" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="Picture" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input type="file" asp-for="Picture" class="form-control" />
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+
+                <div class="col-6 offset-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="IsAvailable">
+                        <label class="form-check-label">
+                            Is Available ?
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <div class="col-10">
+                    <h4>Orders</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>CustomerName</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>OrderDate</th>
+                                <th>Quantity</th>
+                                <th>TotalAmount</th>
+                                <th>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" id="add">Add</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <span class="col-10 text-end">
+                    <a asp-action="Index" asp-controller="Foods" class="btn btn-secondary"><i class="bi bi-arrow-return-left"> Back to index</i></a>
+                    <button type="button" class="btn btn-primary" id="save" style="margin-left:10px; width:120px;"><i class="bi bi-save"> Save</i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts
+    {   
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/jquery-validate/jquery.validate.js"></script>
+    <script src="~/libs/jquery-validate/jquery.validate.unobtrusive.js"></script>
+
+    <script>
+        addOrderForm();
+        $("#add").click(() => {
+            addOrderForm();
+        });
+
+        $(document).on("click", "button.del", function () {
+            $(this).closest("tr").remove();
+        });
+
+        $("#save").click(() => {
+            if (!$("#frm").valid()) return;
+
+            var data = {
+                FoodName: $("#FoodName").val(),
+                Category: $("#Category").val(),
+                Description: $("#Description").val(),
+                Price: $("#Price").val(),
+                Picture: '',
+                IsAvailable: document.getElementById("IsAvailable").checked,
+                Orders: []
+            };
+
+            var customerNames = $("input[name=CustomerName]");
+            var phones = $("input[name=Phone]");
+            var emails = $("input[name=Email]");
+            var addresses = $("input[name=Address]");
+            var orderDates = $("input[name=OrderDate]");
+            var quantities = $("input[name=Quantity]");
+            var totalAmounts = $("input[name=TotalAmount]");
+
+            for (var i = 0; i < customerNames.length; i++) {
+                data.Orders.push({
+                    CustomerName: $(customerNames[i]).val(),
+                    Phone: $(phones[i]).val(),
+                    Email: $(emails[i]).val(),
+                    Address: $(addresses[i]).val(),
+                    OrderDate: $(orderDates[i]).val(),
+                    Quantity: $(quantities[i]).val(),
+                    TotalAmount: $(totalAmounts[i]).val()
+                });
+            }
+
+            if (document.getElementById("Picture").files.length > 0) {
+                var f = document.getElementById("Picture").files[0];
+                var formData = new FormData();
+                formData.append("file", f);
+
+                $.ajax({
+                    url: '/Foods/Upload',
+                    type: 'POST',
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: (r) => {
+                        data.Picture = r.name;
+                        saveData(data);
+                    }
+                });
+            }
+        });
+
+        function saveData(x) {
+            console.log(x);
+            $.ajax({
+                type: "post",
+                url: "/Foods/Create",
+                data: { model: x },
+                dataType: "json",
+                success: r => {
+                    console.log(r);
+                    if (r.success == true) {
+                        window.location.href = "/Foods/Index";
+                    }
+                }
+            });
+        }
+
+        function addOrderForm() {
+            $.ajax({
+                type: "get",
+                url: "/Foods/GetOrderForm",
+                success: r => {
+                    $("#tbody").append(r);
+                    $("#frm").removeData("validator").removeData("unobtrusiveValidation");
+                    $.validator.unobtrusive.parse($("#frm"));
+                }
+            });
+        }
+    </script>
+}
+
+
+

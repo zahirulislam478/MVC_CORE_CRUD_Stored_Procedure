@@ -1,0 +1,34 @@
+﻿@model Order
+<tr>
+    <td>
+        <input type="text" asp-for="CustomerName" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="CustomerName"></span>
+    </td>
+    <td>
+        <input type="tel" asp-for="Phone" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="Phone"></span>
+    </td>
+    <td>
+        <input type="email" asp-for="Email" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </td>
+    <td>
+        <input type="text" asp-for="Address" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </td>
+    <td>
+        <input type="date" asp-for="OrderDate" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="OrderDate"></span>
+    </td>
+    <td>
+        <input type="number" asp-for="Quantity" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="Quantity"></span>
+    </td>
+    <td>
+        <input type="number" asp-for="TotalAmount" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="TotalAmount"></span>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger btn-sm del">Remove</button>
+    </td>
+</tr>

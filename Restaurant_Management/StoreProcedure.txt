@@ -1,0 +1,89 @@
+//Stored Procedures for Food table
+
+            //InsertFood
+            string sqlInsertFood = @"CREATE PROCEDURE InsertFood
+                            @n VARCHAR(100),
+                            @c INT,
+                            @d VARCHAR(100),
+                            @p MONEY,
+                            @pic VARCHAR(100),
+                            @ia BIT
+                        AS
+                        BEGIN
+                            INSERT INTO Foods (FoodName, Category, Description, Price, Picture, IsAvailable)
+                            VALUES (@n, @c, @d, @p, @pic, @ia)
+                        END";
+            migrationBuilder.Sql(sqlInsertFood);
+
+            //UpdateFood
+            string sqlUpdateFood = @"CREATE PROCEDURE UpdateFood
+                                        @id INT,
+                                        @n VARCHAR(100),
+                                        @c INT,
+                                        @d VARCHAR(100),
+                                        @p MONEY,
+                                        @pic VARCHAR(100),
+                                        @ia BIT
+                                    AS
+                                    BEGIN
+                                        UPDATE Foods
+                                        SET FoodName = @n, Category = @c, Description = @d, Price = @p, Picture = @pic, IsAvailable = @ia
+                                        WHERE FoodId = @id
+                                    END";
+            migrationBuilder.Sql(sqlUpdateFood);
+
+            //DeleteFood
+            string sqlDeleteFood = @"CREATE PROCEDURE DeleteFood
+                                        @id INT
+                                    AS
+                                    BEGIN
+                                        DELETE FROM Foods
+                                        WHERE FoodId = @id
+                                    END";
+            migrationBuilder.Sql(sqlDeleteFood);
+
+            //InsertOrder
+            string sqlInsertOrder = @"CREATE PROCEDURE InsertOrder
+                        @cn VARCHAR(100),
+                        @phone INT,
+                        @email VARCHAR(100),
+                        @address VARCHAR(100),
+                        @od DATETIME,
+                        @qty INT,
+                        @ta MONEY,
+                        @fid INT
+                    AS
+                    BEGIN
+                        INSERT INTO Orders (CustomerName, Phone, Email, Address, OrderDate, Quantity, TotalAmount, FoodId)
+                        VALUES (@cn, @phone, @email, @address, @od, @qty, @ta, @fid)
+                    END";
+            migrationBuilder.Sql(sqlInsertOrder);
+
+            //UpdateOrder
+            string sqlUpdatetOrder = @"CREATE PROCEDURE UpdateOrder
+                            @id INT,
+                            @cn VARCHAR(100),
+                            @phone INT,
+                            @email VARCHAR(100),
+                            @address VARCHAR(100),
+                            @od DATETIME,
+                            @qty INT,
+                            @ta MONEY,
+                            @fid INT
+                        AS
+                        BEGIN
+                            UPDATE Orders
+                            SET CustomerName = @cn, Phone = @phone, Email = @email, Address = @address,
+                                OrderDate = @od, Quantity = @qty, TotalAmount = @ta, FoodId = @fid
+                            WHERE OrderId = @id
+                        END";
+            migrationBuilder.Sql(sqlUpdatetOrder);
+
+            //DeleteOrder
+            string sqlDeleteOrder = @"CREATE PROCEDURE DeleteOrder 
+                                        @id INT
+                                    AS
+                                    BEGIN
+                                        DELETE FROM Orders WHERE OrderId = @id
+                                    END";
+            migrationBuilder.Sql(sqlDeleteOrder);

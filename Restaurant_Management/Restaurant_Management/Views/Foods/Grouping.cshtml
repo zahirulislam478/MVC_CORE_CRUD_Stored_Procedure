@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Grouping";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Grouping</title>
+</head>
+<body>
+
+   <div class="row" style="margin-bottom:400px;">
+        <h3 class="d-flex justify-content-center" style="margin-top:50px;">Click your desire button to filter</h3>
+
+        <div class="d-flex justify-content-center">
+
+            <form method="post">
+                <button class="btn btn-primary" type="submit" name="groupby" value="foodname">Group By Food Name</button>
+                <button class="btn btn-primary" type="submit" name="groupby" value="year month">Group By Year, Month</button>
+                <button class="btn btn-primary" type="submit" name="groupby" value="count">Group By Count</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

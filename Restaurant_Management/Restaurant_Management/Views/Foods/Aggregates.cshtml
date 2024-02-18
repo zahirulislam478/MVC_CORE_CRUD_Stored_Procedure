@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Aggregates";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggregates</title>  
+</head>
+<body>
+
+    <div class="container" style="margin-bottom:400px;">
+        <h2>Aggregates</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    
+                    <th>Function</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Count</td>
+                    <td>@Model.Count()</td>
+                </tr>
+                <tr>
+                    <td>Min (qty)</td>
+                    <td>@Model.Min(x => x.Quantity)</td>
+                </tr>
+                <tr>
+                    <td>Max (qty)</td>
+                    <td>@Model.Max(x => x.Quantity)</td>
+                </tr>
+                <tr>
+                    <td>Sum (qty, price)</td>
+                    <td>@Model.Sum(x => x.Quantity)</td>
+                </tr>
+                <tr>
+                    <td>Avg (qty, price)</td>
+                    <td>@Model.Average(x => x.Quantity)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
